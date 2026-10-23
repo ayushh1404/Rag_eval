@@ -1,0 +1,50 @@
+# # --- Web API stack ---
+# fastapi>=0.c110,<1.0
+# uvicorn[standard]>=0.30
+
+# # CORS + multipart uploads (FastAPI needs this for File/Form)
+# python-multipart>=0.0.9
+
+# # --- OpenAI SDK (new v1 API with AsyncOpenAI/OpenAI clients) ---
+# openai>=1.40.0
+
+# # --- Mongo + TLS roots ---
+# pymongo>=4.7
+# certifi>=2024.2.2
+
+# # --- Scraping / HTTP ---
+# requests>=2.32
+# beautifulsoup4>=4.12
+# lxml>=5.0           # speeds up BeautifulSoup; html.parser will be used if lxml isn’t available
+
+# # --- PDF extraction ---
+# PyPDF2>=3.0
+
+# # --- Env loading ---
+# python-dotenv>=1.0
+
+# # --- Pydantic (FastAPI v2 stack) ---
+# pydantic>=2.6,<3
+
+fastapi
+uvicorn
+pymongo
+certifi
+openai
+python-docx
+pdfplumber
+pypdf2
+pillow
+pytesseract
+requests
+beautifulsoup4
+newspaper3k
+trafilatura
+readability-lxml
+playwright
+lxml
+urllib3
+
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-api-python-client==2.126.0

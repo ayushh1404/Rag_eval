@@ -1,0 +1,120 @@
+# extraction_config.yaml
+# External configuration for link extraction
+# Place this file in your project root or config directory
+
+# Request Settings
+request:
+  max_retries: 3
+  timeout: 15 # seconds
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
+# Content Validation
+validation:
+  min_content_length: 100 # minimum characters for valid extraction
+  min_paragraph_length: 30 # minimum characters for a valid paragraph
+
+# Extraction Methods (enable/disable libraries)
+methods:
+  newspaper: true # newspaper3k - best for news/blogs
+  trafilatura: true # trafilatura - best general purpose
+  readability: true # readability-lxml - Mozilla algorithm
+  playwright: false # playwright - for JavaScript sites (slow, install separately)
+  jina_reader: false # Jina Reader API - most reliable (requires API key)
+
+# Jina Reader API Configuration
+jina:
+  api_key: null # Set via environment variable JINA_READER_API_KEY or here
+  api_url: "https://r.jina.ai/"
+
+# Playwright Configuration (if enabled)
+playwright:
+  timeout: 30000 # milliseconds
+  wait_until: "networkidle" # options: load, domcontentloaded, networkidle
+
+# Content Selectors (priority order)
+# The extractor tries these CSS selectors in order to find main content
+content_selectors:
+  - article
+  - main
+  - '[role="main"]'
+  - .article-content
+  - .post-content
+  - .entry-content
+  - .content-body
+  - .content-main
+  - "#content"
+  - .article-body
+  - .post-body
+  - .main-content
+  - .page-content
+  - .entry
+  - .post
+  - .blog-post
+  - .single-post
+  - .article-wrapper
+  - "#main-content"
+  - .page-wrapper
+  - .content-wrapper
+
+# UI/Navigation Text Blocklist
+# Lines containing only these phrases (case-insensitive) will be filtered out
+ui_blocklist:
+  - share
+  - tweet
+  - email
+  - print
+  - menu
+  - search
+  - login
+  - log in
+  - sign up
+  - signup
+  - subscribe
+  - newsletter
+  - follow us
+  - read more
+  - click here
+  - learn more
+  - advertisement
+  - sponsored
+  - related articles
+  - recommended
+  - trending
+  - popular posts
+  - categories
+  - tags
+  - comments
+  - leave a comment
+  - post a comment
+  - view comments
+  - show comments
+  - cookie policy
+  - privacy policy
+  - terms of service
+  - copyright
+  - all rights reserved
+
+# Domain-Specific Configurations (optional)
+# Override settings for specific domains
+domain_overrides:
+  medium.com:
+    content_selectors:
+      - article
+      - .postArticle-content
+    min_content_length: 200
+
+  substack.com:
+    content_selectors:
+      - .post-content
+      - .body
+
+  dev.to:
+    content_selectors:
+      - .article-body
+      - "#article-body"
+
+  # Add more domain-specific configs as needed
+  # example.com:
+  #   content_selectors:
+  #     - .custom-content
+  #   min_content_length: 50

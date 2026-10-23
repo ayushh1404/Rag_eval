@@ -1,0 +1,106 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.so
+
+# --- Environment / Secrets ---
+.env
+.env.local
+.env.*.local
+*.env
+*.key
+*.pem
+secrets.json
+apikeys.json
+
+# --- Logs ---
+*.log
+logs/
+*.out
+*.err
+
+# --- IDE / Editor junk ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+
+# --- OS generated ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Cache ---
+.cache/
+pip-wheel-metadata/
+__pypackages__/
+.mypy_cache/
+pytest_cache/
+.ipynb_checkpoints/
+coverage/
+htmlcov/
+
+# --- Node / Frontend (if full stack) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+Scripts/
+bin/
+Lib/
+Include/
+
+# --- Uploaded / Temporary Data ---
+uploads/
+data/
+tmp/
+*.pdf
+*.docx
+*.csv
+*.xlsx
+
+# --- Compiled binaries ---
+*.exe
+*.dll
+*.dylib
+*.class
+
+# --- Mongo dump / backups ---
+dump/
+backups/
+
+# --- FastAPI specific ---
+*.db
+__logs__/
+__data__/
+__cache__/
+
+
+rag_accuracy_tester.py
+scraper/
+
+dummy_google_oauth.py
+date_parser.py
+dummy_drive_watch.py
+dummy_sheet_identity.py
+dummy_sheet_sync.py
+dummy_sync_debounce.py
